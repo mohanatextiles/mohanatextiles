@@ -15,6 +15,7 @@ const defaultSettings: SiteSettings = {
   productsPageEnabled: true,
   siteName: 'Mohona Textiles',
   siteDescription: 'Premium quality clothing for men and women',
+  driveFolderId: '',
 };
 
 /**
