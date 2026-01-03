@@ -9,7 +9,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Check, Package } from 'lucide-react';
 import { getProductById } from '@/lib/productService';
-import { Product, ColorVariant } from '@/types';
+import { Product /*, ColorVariant*/ } from '@/types';
 import { formatPrice, getEmbeddableImageUrl } from '@/lib/utils';
 import LoadingSpinner from '@/components/LoadingSpinner';
 
@@ -20,7 +20,7 @@ export default function ProductDetailPage() {
   const [product, setProduct] = useState<Product | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedSize, setSelectedSize] = useState<string>('');
-  const [selectedColor, setSelectedColor] = useState<ColorVariant | null>(null);
+  // const [selectedColor, setSelectedColor] = useState<ColorVariant | null>(null);
 
   // Fetch product
   useEffect(() => {
@@ -35,9 +35,9 @@ export default function ProductDetailPage() {
           if (prod.sizes && prod.sizes.length > 0) {
             setSelectedSize(prod.sizes[0]);
           }
-          if (prod.colors && prod.colors.length > 0) {
-            setSelectedColor(prod.colors[0]);
-          }
+          // if (prod.colors && prod.colors.length > 0) {
+          //   setSelectedColor(prod.colors[0]);
+          // }
         } else {
           setProduct(null);
         }
@@ -196,7 +196,7 @@ export default function ProductDetailPage() {
               )}
 
               {/* Color Selection */}
-              {product.colors && product.colors.length > 0 && (
+              {/* {product.colors && product.colors.length > 0 && (
                 <div className="mb-8 pb-8 border-b border-gray-200">
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">
                     Select Color
@@ -230,7 +230,7 @@ export default function ProductDetailPage() {
                     ))}
                   </div>
                 </div>
-              )}
+              )} */
             </motion.div>
           </div>
         </div>
