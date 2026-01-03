@@ -7,7 +7,8 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Check, Package } from 'lucide-react';
+import { ArrowLeft, Package} from 'lucide-react';
+// import {Check} from 'lucide-react';
 import { getProductById } from '@/lib/productService';
 import { Product /*, ColorVariant*/ } from '@/types';
 import { formatPrice, getEmbeddableImageUrl } from '@/lib/utils';
@@ -195,8 +196,9 @@ export default function ProductDetailPage() {
                 </div>
               )}
 
-              {/* Color Selection */}
-              {/* {product.colors && product.colors.length > 0 && (
+              {/* Color Selection - Temporarily Disabled */}
+              {/* Color selection feature is commented out for now
+              {product.colors && product.colors.length > 0 && (
                 <div className="mb-8 pb-8 border-b border-gray-200">
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">
                     Select Color
@@ -230,7 +232,8 @@ export default function ProductDetailPage() {
                     ))}
                   </div>
                 </div>
-              )} */
+              )}
+              */}
             </motion.div>
           </div>
         </div>
